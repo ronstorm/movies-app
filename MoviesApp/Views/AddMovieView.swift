@@ -26,6 +26,22 @@ struct AddMovieView: View {
         posters[movie]?.toggle()
     }
     
+    private func saveMovie() {
+        
+        // get the selected poster
+        let selectedPoster = posters.first {
+            $0.value == true
+        }.map { $0.key } ?? "placeholder"
+        
+        HTTPMovieClient().saveMovie(name: self.name, poster: selectedPoster) { success in
+            if success {
+                // close the modal
+            } else {
+                // show the user error message that the saving was not successful
+            }
+        }
+    }
+    
     var body: some View {
         NavigationView {
             
@@ -78,7 +94,7 @@ struct AddMovieView: View {
                     Button("Add Movie") {
                         
                         // save the movie
-                        
+                        self.saveMovie()
                     }
                     .padding(8)
                     .foregroundColor(Color.white)
