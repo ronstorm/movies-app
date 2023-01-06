@@ -36,6 +36,7 @@ struct AddMovieView: View {
         HTTPMovieClient().saveMovie(name: self.name, poster: selectedPoster) { success in
             if success {
                 // close the modal
+                self.presentationMode.wrappedValue.dismiss()
             } else {
                 // show the user error message that the saving was not successful
             }

@@ -10,6 +10,26 @@ import Foundation
 
 class HTTPMovieClient: ObservableObject {
     
+    @Published var movies = [Movie]()
+    
+    func getAllMovies() {
+        
+        guard let url = URL(string: "http://localhost:8080/movies") else {
+            fatalError("URL is not defined!")
+        }
+        
+        URLSession.shared.dataTask(with: url) { [weak self] data, response, error in
+            
+            guard let self, let data, error == nil else { return }
+            
+            if let movies = try? JSONDecoder().decode([Movie].self, from: data) {
+                DispatchQueue.main.async {
+                    self.movies = movies
+                }
+            }
+        }.resume()
+    }
+    
     func saveMovie(name: String, poster: String, completion: @escaping (Bool) -> Void) {
         
         guard let url = URL(string: "http://localhost:8080/movies") else {
