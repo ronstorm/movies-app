@@ -12,6 +12,23 @@ class HTTPMovieClient: ObservableObject {
     
     @Published var movies = [Movie]()
     
+    func deleteMovie(movie: Movie, completion: @escaping (Bool) -> Void) {
+        
+        guard let uuid = movie.id?.uuidString, let url = URL(string: "http://localhost:8080/movies/\(uuid)") else {
+            fatalError("URL is not defined!")
+        }
+        
+        var request = URLRequest(url: url)
+        request.httpMethod = "DELETE"
+        
+        URLSession.shared.dataTask(with: request) { data, response, error in
+            guard let _ = data, error == nil else {
+                return completion(false)
+            }
+            completion(true)
+        }.resume()
+    }
+    
     func getAllMovies() {
         
         guard let url = URL(string: "http://localhost:8080/movies") else {

@@ -18,20 +18,24 @@ struct ContentView: View {
     var body: some View {
         
         NavigationView {
+            
             List(self.httpClient.movies, id: \.id) { movie in
                 
-                VStack {
-                    Image(movie.poster)
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
+                NavigationLink(destination: MovieDetailsView(movie: movie)) {
                     
-                    Text(movie.title)
-                        .frame(maxWidth: .infinity)
-                        .padding()
-                        .foregroundColor(.white)
-                        .background(Color.blue)
-                        .font(.system(size: 25))
-                        .cornerRadius(10)
+                    VStack {
+                        Image(movie.poster)
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                        
+                        Text(movie.title)
+                            .frame(maxWidth: .infinity)
+                            .padding()
+                            .foregroundColor(.white)
+                            .background(Color.blue)
+                            .font(.system(size: 25))
+                            .cornerRadius(10)
+                    }
                 }
             }
             .navigationBarTitle("Movies")

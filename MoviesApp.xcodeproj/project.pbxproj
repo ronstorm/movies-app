@@ -17,6 +17,7 @@
 		8DE01E2A2496D5570063E598 /* AddMovieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DE01E292496D5570063E598 /* AddMovieView.swift */; };
 		94E032FA2968956200CC612F /* HTTPMovieClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94E032F92968956200CC612F /* HTTPMovieClient.swift */; };
 		94E032FD2968960400CC612F /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94E032FC2968960400CC612F /* Movie.swift */; };
+		94E032FF2968C86B00CC612F /* MovieDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94E032FE2968C86B00CC612F /* MovieDetailsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		8DE01E292496D5570063E598 /* AddMovieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMovieView.swift; sourceTree = "<group>"; };
 		94E032F92968956200CC612F /* HTTPMovieClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMovieClient.swift; sourceTree = "<group>"; };
 		94E032FC2968960400CC612F /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
+		94E032FE2968C86B00CC612F /* MovieDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 			children = (
 				8DE01E162496D36C0063E598 /* ContentView.swift */,
 				8DE01E292496D5570063E598 /* AddMovieView.swift */,
+				94E032FE2968C86B00CC612F /* MovieDetailsView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -192,6 +195,7 @@
 			files = (
 				94E032FD2968960400CC612F /* Movie.swift in Sources */,
 				8DE01E132496D36C0063E598 /* AppDelegate.swift in Sources */,
+				94E032FF2968C86B00CC612F /* MovieDetailsView.swift in Sources */,
 				94E032FA2968956200CC612F /* HTTPMovieClient.swift in Sources */,
 				8DE01E2A2496D5570063E598 /* AddMovieView.swift in Sources */,
 				8DE01E152496D36C0063E598 /* SceneDelegate.swift in Sources */,
