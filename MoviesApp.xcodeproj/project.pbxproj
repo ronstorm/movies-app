@@ -18,6 +18,7 @@
 		94E032FA2968956200CC612F /* HTTPMovieClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94E032F92968956200CC612F /* HTTPMovieClient.swift */; };
 		94E032FD2968960400CC612F /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94E032FC2968960400CC612F /* Movie.swift */; };
 		94E032FF2968C86B00CC612F /* MovieDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94E032FE2968C86B00CC612F /* MovieDetailsView.swift */; };
+		94E033012969949700CC612F /* Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94E033002969949700CC612F /* Review.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		94E032F92968956200CC612F /* HTTPMovieClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMovieClient.swift; sourceTree = "<group>"; };
 		94E032FC2968960400CC612F /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 		94E032FE2968C86B00CC612F /* MovieDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailsView.swift; sourceTree = "<group>"; };
+		94E033002969949700CC612F /* Review.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Review.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +120,7 @@
 			isa = PBXGroup;
 			children = (
 				94E032FC2968960400CC612F /* Movie.swift */,
+				94E033002969949700CC612F /* Review.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -195,6 +198,7 @@
 			files = (
 				94E032FD2968960400CC612F /* Movie.swift in Sources */,
 				8DE01E132496D36C0063E598 /* AppDelegate.swift in Sources */,
+				94E033012969949700CC612F /* Review.swift in Sources */,
 				94E032FF2968C86B00CC612F /* MovieDetailsView.swift in Sources */,
 				94E032FA2968956200CC612F /* HTTPMovieClient.swift in Sources */,
 				8DE01E2A2496D5570063E598 /* AddMovieView.swift in Sources */,

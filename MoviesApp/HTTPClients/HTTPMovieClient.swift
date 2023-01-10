@@ -61,11 +61,29 @@ class HTTPMovieClient: ObservableObject {
         request.httpBody = try? JSONEncoder().encode(movie)
         
         URLSession.shared.dataTask(with: request) { data, response, error in
-            
             guard let _ = data, error == nil else {
                 return completion(false)
             }
             
+            completion(true)
+        }.resume()
+    }
+    
+    func saveReview(review: Review, completion: @escaping (Bool) -> Void) {
+        
+        guard let url = URL(string: "http://localhost:8080/reviews") else {
+            fatalError("URL is not defined!")
+        }
+        
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.httpBody = try? JSONEncoder().encode(review)
+        
+        URLSession.shared.dataTask(with: request) { data, response, error in
+            guard let _ = data, error == nil else {
+                return completion(false)
+            }
             completion(true)
         }.resume()
     }

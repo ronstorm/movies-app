@@ -12,7 +12,6 @@ struct MovieDetailsView: View {
     
     let movie: Movie
     
-    
     @State
     private var reviewTitle: String = ""
     
@@ -31,6 +30,12 @@ struct MovieDetailsView: View {
         }
     }
     
+    private func saveReview() {
+        
+        let review = Review(title: self.reviewTitle, body: self.reviewBody, movie: self.movie)
+        HTTPMovieClient().saveReview(review: review) { _ in }
+    }
+    
     var body: some View {
         
         Form {
@@ -45,10 +50,11 @@ struct MovieDetailsView: View {
                     TextField("Enter Title",text: $reviewTitle)
                         .textFieldStyle(RoundedBorderTextFieldStyle())
                     
-                    TextField("Enter Body",text: $reviewTitle) .textFieldStyle(RoundedBorderTextFieldStyle())
+                    TextField("Enter Body",text: $reviewBody)
+                        .textFieldStyle(RoundedBorderTextFieldStyle())
                     
                     Button("Save") {
-                        print("save")
+                        self.saveReview()
                     }
                 }
                 
